@@ -14,8 +14,19 @@ public class Aims {
 		 DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", 18.99f);
 		 anOrder.addDigitalVideoDisc(dvd3);
 		 
-		 System.out.println("Total cost is: ");
+		 System.out.print("Total cost is: ");
 		 System.out.println(anOrder.totalCost());
+		 
+		 anOrder.removeDigitalVideoDisc(dvd3);
+		 
+		 DigitalVideoDisc dvd4 = new DigitalVideoDisc("Reservoir Dogs", "Thriller", 24.99f);
+		 anOrder.removeDigitalVideoDisc(dvd4);
+		 
+		 System.out.print("Total cost is: ");
+		 System.out.println(anOrder.totalCost());
+		 
+		 System.out.print("Number of items in cart is: ");
+		 System.out.println(anOrder.getQuantity());
 	}
 
 }

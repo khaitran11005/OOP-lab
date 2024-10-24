@@ -3,9 +3,12 @@ public class Cart {
 	private ArrayList<DigitalVideoDisc> itemsList;
 	private int qtyOrdered;
 	
+	public Cart() {
+		itemsList = new ArrayList<>();
+		qtyOrdered = 0;
+	}
+	
 	public static final int MAX_NUMBERS_ORDERED = 20;
-	private DigitalVideoDisc itemsOrdered[] = 
-			new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
 	
 	public void addDigitalVideoDisc(DigitalVideoDisc disc) {
 		if (qtyOrdered < MAX_NUMBERS_ORDERED) {
@@ -28,11 +31,15 @@ public class Cart {
 		}
 	}
 	
-	public int totalCost() {
-		int cost = 0;
+	public float totalCost() {
+		float cost = 0;
 		for (int i = 0; i < qtyOrdered; i++) {
 			cost += itemsList.get(i).getCost();
 		}
 		return cost;
+	}
+	
+	public int getQuantity() {
+		return qtyOrdered;
 	}
 }
