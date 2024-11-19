@@ -22,10 +22,12 @@ public class DigitalVideoDisc {
 	public float getCost() {
 		return cost;
 	}
-	// public void setTitle(String name) {
-		// title = name;
-		// temporary
-	// }
+	public int getID() {
+		return id;
+	}
+	public void setTitle(String name) {
+		title = name;
+	}
 	public DigitalVideoDisc(String title) {
 		super();
 		this.title = title;
@@ -58,5 +60,20 @@ public class DigitalVideoDisc {
 		this.cost = cost;
 		this.id = nbDigitalVideoDiscs;
 		nbDigitalVideoDiscs += 1;
+	}
+	
+	public String toString() {
+		String string = this.getTitle() + " - " + this.getCategory() + " - " + this.getDirector() +
+				" - " + this.getLength() + ": " + this.getCost() + "$";
+		return string;
+	}
+	
+	public boolean isMatch(String title) {
+		if (this.title.contains(title)) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 }
