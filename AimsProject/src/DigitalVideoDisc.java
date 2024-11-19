@@ -20,6 +20,10 @@ public class DigitalVideoDisc {
 	public float getCost() {
 		return cost;
 	}
+	public void setTitle(String name) {
+		title = name;
+		// temporary
+	}
 	public DigitalVideoDisc(String title) {
 		super();
 		this.title = title;
