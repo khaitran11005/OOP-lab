@@ -69,7 +69,7 @@ public class DigitalVideoDisc {
 	}
 	
 	public boolean isMatch(String title) {
-		if (this.title.contains(title)) {
+		if (this.title.toLowerCase().contains(title.toLowerCase())) {
 			return true;
 		}
 		else {
