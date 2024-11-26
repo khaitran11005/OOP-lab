@@ -1,18 +1,8 @@
 package hust.soict.dsai.aims.media;
 
-public class DigitalVideoDisc extends Media {
+public class DigitalVideoDisc extends Disc {
 	
 	private static int nbDigitalVideoDiscs = 0;
-	
-	private String director;
-	private int length;
-
-	public String getDirector() {
-		return director;
-	}
-	public int getLength() {
-		return length;
-	}
 
 	public DigitalVideoDisc(String title) {
 		super();
