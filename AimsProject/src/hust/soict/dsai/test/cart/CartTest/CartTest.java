@@ -1,6 +1,6 @@
 package hust.soict.dsai.test.cart.CartTest;
 import hust.soict.dsai.aims.cart.Cart.Cart;
-import hust.soict.dsai.aims.disc.DigitalVideoDisc.DigitalVideoDisc;
+import hust.soict.dsai.aims.media.DigitalVideoDisc;
 
 public class CartTest {
 
@@ -22,8 +22,8 @@ public class CartTest {
 		 
 		 cart.print();
 		 
-		 System.out.println(dvd1.getID());
-		 System.out.println(dvd3.getID());
+		 System.out.println(dvd1.getId());
+		 System.out.println(dvd3.getId());
 		 cart.searchID(2);
 		 cart.searchID(9);
 		 cart.searchTitle("Star ");
