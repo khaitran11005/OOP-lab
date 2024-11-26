@@ -12,25 +12,25 @@ public class Book extends Media {
 	
 	public void addAuthor(String authorName) {
 		boolean inList = false;
-		for (int i = 0; i < authors.size(); i++) {
-			if (authors.get(i) == authorName) {
+		for (int i = 0; i < this.authors.size(); i++) {
+			if (this.authors.get(i) == authorName) {
 				inList = true;
 			}
 		}
 		if (inList) {
 			System.out.println("Author already in list.");
 		} else {
-			authors.add(authorName);
+			this.authors.add(authorName);
 			System.out.println("Author " + authorName + " successfully added.");
 		}
 	}
 	
 	public void removeAuthor(String authorName) {
 		boolean inList = false;
-		for (int i = 0; i < authors.size(); i++) {
-			if (authors.get(i) == authorName) {
+		for (int i = 0; i < this.authors.size(); i++) {
+			if (this.authors.get(i) == authorName) {
 				inList = true;
-				authors.remove(i);
+				this.authors.remove(i);
 				System.out.println("Author " + authorName + " successfully removed.");
 			}
 		}
