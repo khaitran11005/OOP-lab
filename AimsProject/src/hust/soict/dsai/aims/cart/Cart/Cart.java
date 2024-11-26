@@ -1,7 +1,7 @@
 package hust.soict.dsai.aims.cart.Cart;
 import java.util.ArrayList;
 
-import hust.soict.dsai.aims.disc.DigitalVideoDisc.DigitalVideoDisc;
+import hust.soict.dsai.aims.media.DigitalVideoDisc;
 public class Cart {
 	private ArrayList<DigitalVideoDisc> itemsList;
 	private int qtyOrdered;
@@ -95,7 +95,7 @@ public class Cart {
 	
 	public boolean searchID(int ID) {
 		for (DigitalVideoDisc dvd: itemsList) {
-			if (dvd.getID() == ID) {
+			if (dvd.getId() == ID) {
 				System.out.println("Found!");
 				System.out.println(dvd.toString());
 				return true;
