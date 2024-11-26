@@ -17,8 +17,10 @@ public class CartTest {
 		 
 		 DigitalVideoDisc dvd4 = new DigitalVideoDisc("Reservoir Dogs", "Thriller", 24.99f);
 		 
-		 cart.addDigitalVideoDisc(dvd1, dvd2);
-		 cart.addDigitalVideoDisc(dvd3, dvd4);
+		 cart.addMedia(dvd1);
+		 cart.addMedia(dvd2);
+		 cart.addMedia(dvd3);
+		 cart.addMedia(dvd4);
 		 
 		 cart.print();
 		 
