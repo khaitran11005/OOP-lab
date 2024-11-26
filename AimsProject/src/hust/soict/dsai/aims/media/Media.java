@@ -50,4 +50,14 @@ public abstract class Media {
 		this.cost = cost;
 	}
 
+	// this method was originally in DigitalVideoDisc, migrated here so that searchTitle in Cart would continue working
+	public boolean isMatch(String title) {
+		if (this.title.toLowerCase().contains(title.toLowerCase())) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
 }
