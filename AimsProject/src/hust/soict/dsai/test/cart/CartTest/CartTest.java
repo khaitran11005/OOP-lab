@@ -9,13 +9,13 @@ public class CartTest {
 		Cart cart = new Cart();
 		
 		// new test dvd objects
-		 DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King", "Animation", "Roger Allers", 87, 19.95f);
+		 DigitalVideoDisc dvd1 = new DigitalVideoDisc(10116, "The Lion King", "Animation", 19.95f, 87, "Roger Allers");
 		 
-		 DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star Wars", "Science Fiction", "George Lucas", 87, 24.95f);
+		 DigitalVideoDisc dvd2 = new DigitalVideoDisc(10117, "Star Wars", "Science Fiction", 24.95f, 87, "George Lucas");
 		 
-		 DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", 18.99f);
+		 DigitalVideoDisc dvd3 = new DigitalVideoDisc(10205, "Aladin", "Animation", 18.99f);
 		 
-		 DigitalVideoDisc dvd4 = new DigitalVideoDisc("Reservoir Dogs", "Thriller", 24.99f);
+		 DigitalVideoDisc dvd4 = new DigitalVideoDisc(10311, "Reservoir Dogs", "Thriller", 24.99f);
 		 
 		 cart.addMedia(dvd1);
 		 cart.addMedia(dvd2);

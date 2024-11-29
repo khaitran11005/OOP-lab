@@ -7,7 +7,18 @@ public class Book extends Media {
 	private ArrayList<String> authors;
 
 	public Book() {
+		super();
 		this.authors = new ArrayList<String>();
+	}
+	
+	public Book(int id, String title, String category, float cost) {
+		super(id, title, category, cost);
+		this.authors = new ArrayList<String>();
+	}
+	
+	public Book(int id, String title, String category, float cost, ArrayList<String> authors) {
+		super(id, title, category, cost);
+		this.authors = authors;
 	}
 	
 	public void addAuthor(String authorName) {
@@ -37,6 +48,11 @@ public class Book extends Media {
 		if (inList == false) {
 			System.out.println("Author not in list.");
 		} 
+	}
+	
+	public String toString() {
+		String string = this.getTitle() + " - " + this.getCategory() + ": " + this.getCost() + "$";
+		return string;
 	}
 	
 }

@@ -18,6 +18,7 @@ public class CompactDisc extends Disc implements Playable {
 	public CompactDisc(int id, String title, String category, float cost, int length, String director) {
 		super(id, title, category, cost, length, director);
 	}
+	// why did we have a director parameter for disc class again?? i do not know what im doing
 	
 	public CompactDisc(int id, String title, String category, float cost, int length, String director, String artist, ArrayList<Track> tracks) {
 		super(id, title, category, cost, length, director);
@@ -64,6 +65,12 @@ public class CompactDisc extends Disc implements Playable {
 			total += this.tracks.get(i).getLength();
 		}
 		return total;
+	}
+	
+	public String toString() {
+		String string = this.getTitle() + " - " + this.getCategory() + " - " + this.getArtist() +
+				" - " + this.tracks.size() + " tracks - "+ this.getLength() + ": " + this.getCost() + "$";
+		return string;
 	}
 	
 	public void play() {
