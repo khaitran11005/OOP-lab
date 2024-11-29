@@ -4,10 +4,10 @@ import java.util.*;
 
 public class Book extends Media {
 	
-	private List<String> authors = new ArrayList<String>();
+	private ArrayList<String> authors;
 
 	public Book() {
-		// TODO Auto-generated constructor stub
+		this.authors = new ArrayList<String>();
 	}
 	
 	public void addAuthor(String authorName) {
