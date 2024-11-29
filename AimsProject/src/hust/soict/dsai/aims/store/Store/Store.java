@@ -22,4 +22,14 @@ public class Store {
 			System.out.println("Removed " + media.toString());
 		} else {System.out.println("Item not found.");}
 	}
+	
+	public void print() {
+		for (Media m: itemsInStore) {
+			System.out.println(m.toString());
+		}
+	}
+	
+	public ArrayList<Media> getItems() {
+		return this.itemsInStore;
+	}
 }
