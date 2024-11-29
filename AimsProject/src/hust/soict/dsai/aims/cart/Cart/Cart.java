@@ -1,6 +1,6 @@
 package hust.soict.dsai.aims.cart.Cart;
 
-import java.util.ArrayList;
+import java.util.*;
 import hust.soict.dsai.aims.media.Media;
 
 public class Cart {
@@ -12,6 +12,10 @@ public class Cart {
 	}
 	
 	public static final int MAX_NUMBERS_ORDERED = 20;
+	
+	public int returnCount() {
+		return this.itemsList.size();
+	}
 	
 	public void addMedia(Media media) {
 		boolean inList = false;
@@ -63,26 +67,43 @@ public class Cart {
 		System.out.println("***************************************************");
 	}
 	
-	public boolean searchID(int ID) {
+	public void searchID(int ID) {
+		boolean found = false;
 		for (Media media: itemsList) {
 			if (media.getId() == ID) {
-				System.out.println("Found!");
+				found = true;
 				System.out.println(media.toString());
-				return true;
 			}
 		}
+		if (found == false) {
 		System.out.println("Can't find matching DVD.");
-		return false;
+		}
 	}
 	
-	public boolean searchTitle(String title) {
+	public void searchTitle(String title) {
+		boolean found = false;
 		for (Media media: itemsList) {
 			if (media.isMatch(title)) {
+				found = true;
 				System.out.println(media.toString());
-				return true;
 			}
 		}
+		if (found = false) {
 		System.out.println("Can't find matching DVD.");
-		return false;
+		}
+	}
+	
+	public void sortCost() {
+		Collections.sort(itemsList, Media.COMPARE_BY_COST_TITLE);
+	}
+	
+	public void sortTitle() {
+		Collections.sort(itemsList, Media.COMPARE_BY_TITLE_COST);
+	}
+	
+	public void clearCart() {
+		for (Media m: itemsList) {
+			itemsList.remove(m);
+		}
 	}
 }

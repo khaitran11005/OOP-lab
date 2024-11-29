@@ -11,12 +11,14 @@ public class CompactDisc extends Disc implements Playable {
 		super();
 	}
 	
-	public CompactDisc(int id, String title, String category, float cost) {
+	public CompactDisc(int id, String title, String category, float cost, String artist) {
 		super(id, title, category, cost);
+		this.artist = artist;
 	}
 	
-	public CompactDisc(int id, String title, String category, float cost, int length, String director) {
+	public CompactDisc(int id, String title, String category, float cost, int length, String director, String artist) {
 		super(id, title, category, cost, length, director);
+		this.artist = artist;
 	}
 	// why did we have a director parameter for disc class again?? i do not know what im doing
 	
