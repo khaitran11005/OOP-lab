@@ -60,4 +60,11 @@ public abstract class Media {
 		}
 	}
 	
+	public boolean equals(Object media) {
+		Media castMedia = (Media) media;
+		if (this.title == castMedia.getTitle()) {
+			return true;
+		} else {return false;}
+	}
+	
 }
