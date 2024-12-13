@@ -5,10 +5,12 @@ import hust.soict.dsai.aims.store.Store.Store;
 
 import java.util.*;
 
+import javax.swing.JOptionPane;
+
 public class Aims {
 
-	private static Store store = new Store();
-	private static Cart cart = new Cart();
+	public static Store store = new Store();
+	public static Cart cart = new Cart();
 	private static Scanner scanner = new Scanner(System.in);
 	
 	public static void showMenu() {
@@ -145,7 +147,7 @@ public class Aims {
 		return null;
 	}
 	
-	private static void viewStore() {
+	public static void viewStore() {
 		int option = -1;
 		while (option != 0) {
 			storeMenu();
@@ -187,25 +189,26 @@ public class Aims {
 		}
 	}
 	
-	private static void addtoCart(Media media) {
+	public static void addtoCart(Media media) {
 		if (media == null) {
 			return;
 		}
 		
 		cart.addMedia(media);
-		System.out.print("Current amount of items in cart: ");
-		System.out.println(cart.returnCount());
+		JOptionPane.showMessageDialog(null, "Added media, total media in cart: " + cart.returnCount(), "AIMS", JOptionPane.INFORMATION_MESSAGE);
 	}
 	
-	private static void playMedia(Media media) {
+	public static void playMedia(Media media) {
 		if (media == null) {
 			return;
 		} else if (media instanceof DigitalVideoDisc) {
 			((DigitalVideoDisc) media).play();
+			JOptionPane.showMessageDialog(null, "Playing: " + media.getTitle(), "AIMS", JOptionPane.INFORMATION_MESSAGE);
 		} else if (media instanceof CompactDisc) {
 			((CompactDisc) media).play();
+			JOptionPane.showMessageDialog(null, "Playing: " + media.getTitle(), "AIMS", JOptionPane.INFORMATION_MESSAGE);
 		} else {
-			System.out.println("Can't be played.");
+			JOptionPane.showMessageDialog(null, "Can't play media", "AIMS", JOptionPane.INFORMATION_MESSAGE);
 		}
 	}
 	
@@ -241,7 +244,7 @@ public class Aims {
 		}
 	}
 	
-	private static void addDvd() {
+	public static void addDvd() {
 		
 		String title = "";
 		String category = "";
@@ -284,7 +287,7 @@ public class Aims {
 		}
 	}
 	
-	private static void addCd() {
+	public static void addCd() {
 		String title = "";
 		String category = "";
 		String director = "";
@@ -331,7 +334,7 @@ public class Aims {
 		}
 	}
 
-	private static void addBook() {
+	public static void addBook() {
 		String title = "";
 		String category = "";
 		float cost = 0;
