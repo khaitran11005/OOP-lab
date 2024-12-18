@@ -2,6 +2,8 @@ package hust.soict.dsai.aims.media;
 
 import java.util.*;
 
+import hust.soict.dsai.aims.exception.PlayerException;
+
 public abstract class Media {
 	
 	protected int id;
@@ -71,13 +73,19 @@ public abstract class Media {
 		}
 	}
 	
-	public boolean equals(Object media) {
-		Media castMedia = (Media) media;
-		if (this.title == castMedia.getTitle()) {
-			return true;
-		} else {return false;}
+	public boolean equals(Object media) throws NullPointerException, ClassCastException {
+		try {
+			Media castMedia = (Media) media;
+			if (this.title == castMedia.getTitle()) {
+				return true;
+			} else {return false;}
+		} catch (NullPointerException e) {
+			return false;
+		} catch (ClassCastException e) {
+			return false;
+		}
 	}
 
-	public abstract void play();
+	public abstract void play() throws PlayerException;
 	
 }

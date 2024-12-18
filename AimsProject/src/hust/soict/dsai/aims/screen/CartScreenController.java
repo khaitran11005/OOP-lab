@@ -1,6 +1,7 @@
 package hust.soict.dsai.aims.screen;
 
 import hust.soict.dsai.aims.cart.Cart.Cart;
+import hust.soict.dsai.aims.exception.PlayerException;
 import hust.soict.dsai.aims.media.Media;
 import hust.soict.dsai.aims.media.Playable;
 import hust.soict.dsai.aims.store.Store.Store;
@@ -73,7 +74,7 @@ public class CartScreenController {
 		totalCostLabel.setText(cart.totalCost() + " $");
 	}
 	
-	void btnPlayPressed(ActionEvent event) {
+	void btnPlayPressed(ActionEvent event) throws PlayerException {
 		Media media = tblMedia.getSelectionModel().getSelectedItem();
 		media.play();
 		totalCostLabel.setText(cart.totalCost() + " $");

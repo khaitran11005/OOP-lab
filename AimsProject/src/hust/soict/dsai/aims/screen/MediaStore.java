@@ -6,6 +6,7 @@ import java.awt.event.*;
 import javax.swing.*;
 
 import hust.soict.dsai.aims.Aims.Aims;
+import hust.soict.dsai.aims.exception.PlayerException;
 import hust.soict.dsai.aims.media.Media;
 import hust.soict.dsai.aims.media.Playable;
 
@@ -52,7 +53,12 @@ public class MediaStore extends JPanel {
 			if (button.equals("Add to cart")) {
 				Aims.addtoCart(media);
 			} else if (button.equals("Play")) {
-				Aims.playMedia(media);
+				try {
+					Aims.playMedia(media);
+				} catch (PlayerException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		}
 	}

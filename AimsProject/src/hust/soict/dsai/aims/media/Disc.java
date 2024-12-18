@@ -1,5 +1,7 @@
 package hust.soict.dsai.aims.media;
 
+import hust.soict.dsai.aims.exception.PlayerException;
+
 public class Disc extends Media {
 	
 	protected int length;
@@ -28,7 +30,7 @@ public class Disc extends Media {
 	}
 
 	@Override
-	public void play() {
+	public void play() throws PlayerException {
 		// TODO Auto-generated method stub
 		
 	}
