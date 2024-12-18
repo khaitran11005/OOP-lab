@@ -27,13 +27,13 @@
                      <items>
                         <Menu mnemonicParsing="false" text="Update Store">
                           <items>
-                            <MenuItem mnemonicParsing="false" text="Add Book" />
-                              <MenuItem mnemonicParsing="false" text="Add DVD" />
-                              <MenuItem mnemonicParsing="false" text="Add CD" />
+                            <MenuItem fx:id="addBookOption" mnemonicParsing="false" onAction="#addBookOptionPressed" text="Add Book" />
+                              <MenuItem fx:id="addDVDOption" mnemonicParsing="false" onAction="#addDVDOptionPressed" text="Add DVD" />
+                              <MenuItem fx:id="addCDOption" mnemonicParsing="false" onAction="#addCDOptionPressed" text="Add CD" />
                           </items>
                         </Menu>
-                        <MenuItem mnemonicParsing="false" text="View Store" />
-                        <MenuItem mnemonicParsing="false" text="View Cart" />
+                        <MenuItem fx:id="viewStoreOption" mnemonicParsing="false" onAction="#viewStoreOptionPressed" text="View Store" />
+                        <MenuItem fx:id="viewCartOption" mnemonicParsing="false" onAction="#viewCartOptionPressed" text="View Cart" />
                      </items>
                 </Menu>
               </menus>
@@ -98,7 +98,7 @@
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label text="0 $" textFill="AQUA">
+                  <Label fx:id="totalCostLabel" text="0 $" textFill="AQUA">
                      <font>
                         <Font size="24.0" />
                      </font>
