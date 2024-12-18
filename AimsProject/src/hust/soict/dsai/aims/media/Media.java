@@ -72,5 +72,7 @@ public abstract class Media {
 			return true;
 		} else {return false;}
 	}
+
+	public abstract void play();
 	
 }
