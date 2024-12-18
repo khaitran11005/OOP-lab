@@ -26,5 +26,11 @@ public class Disc extends Media {
 	public String getDirector() {
 		return director;
 	}
+
+	@Override
+	public void play() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

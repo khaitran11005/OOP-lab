@@ -54,5 +54,11 @@ public class Book extends Media {
 		String string = this.getTitle() + " - " + this.getCategory() + ": " + this.getCost() + "$";
 		return string;
 	}
+
+	@Override
+	public void play() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

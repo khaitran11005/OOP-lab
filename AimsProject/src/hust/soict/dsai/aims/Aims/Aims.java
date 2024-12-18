@@ -420,7 +420,7 @@ public class Aims {
 		}
 	}
 	
-	private static void placeOrder() {
+	public static void placeOrder() {
 		System.out.println("Order placed");
 		cart.clearCart();
 	}
