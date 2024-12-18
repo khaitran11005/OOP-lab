@@ -1,5 +1,6 @@
 package hust.soict.dsai.aims.Aims;
 import hust.soict.dsai.aims.cart.Cart.Cart;
+import hust.soict.dsai.aims.exception.PlayerException;
 import hust.soict.dsai.aims.media.*;
 import hust.soict.dsai.aims.store.Store.Store;
 
@@ -147,7 +148,7 @@ public class Aims {
 		return null;
 	}
 	
-	public static void viewStore() {
+	public static void viewStore() throws PlayerException {
 		int option = -1;
 		while (option != 0) {
 			storeMenu();
@@ -169,7 +170,7 @@ public class Aims {
 		}
 	}
 		
-	private static void viewDetails(Media media) {
+	private static void viewDetails(Media media) throws PlayerException {
 		if (media == null) {
 			return;
 		}
@@ -198,17 +199,25 @@ public class Aims {
 		JOptionPane.showMessageDialog(null, "Added media, total media in cart: " + cart.returnCount(), "AIMS", JOptionPane.INFORMATION_MESSAGE);
 	}
 	
-	public static void playMedia(Media media) {
+	public static void playMedia(Media media) throws PlayerException {
 		if (media == null) {
 			return;
 		} else if (media instanceof DigitalVideoDisc) {
-			((DigitalVideoDisc) media).play();
-			JOptionPane.showMessageDialog(null, "Playing: " + media.getTitle(), "AIMS", JOptionPane.INFORMATION_MESSAGE);
+			try {
+				((DigitalVideoDisc) media).play();
+				JOptionPane.showMessageDialog(null, "Playing: " + media.getTitle(), "AIMS", JOptionPane.INFORMATION_MESSAGE);
+			} catch (PlayerException e) {
+				JOptionPane.showMessageDialog(null, "Error: DVD length is non-positive", "Illegal DVD length", JOptionPane.ERROR_MESSAGE);
+			}
 		} else if (media instanceof CompactDisc) {
-			((CompactDisc) media).play();
-			JOptionPane.showMessageDialog(null, "Playing: " + media.getTitle(), "AIMS", JOptionPane.INFORMATION_MESSAGE);
+			try {
+				((CompactDisc) media).play();
+				JOptionPane.showMessageDialog(null, "Playing: " + media.getTitle(), "AIMS", JOptionPane.INFORMATION_MESSAGE);
+			} catch (PlayerException e) {
+				JOptionPane.showMessageDialog(null, "Error: CD length is non-positive, or one of the tracks' length is non-positive", "Illegal CD length", JOptionPane.ERROR_MESSAGE);
+			}
 		} else {
-			JOptionPane.showMessageDialog(null, "Can't play media", "AIMS", JOptionPane.INFORMATION_MESSAGE);
+			throw new PlayerException("Can't play the media!");
 		}
 	}
 	
@@ -351,7 +360,7 @@ public class Aims {
 		store.addMedia(new Book(id, title, category, cost));
 	}
 	
-	private static void viewCart() {
+	private static void viewCart() throws PlayerException {
 		int option = -1;
 		while (option != 0) {
 			cartMenu();
@@ -425,7 +434,7 @@ public class Aims {
 		cart.clearCart();
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws PlayerException {
 		int option = -1;
 		while (option != 0) {
 			showMenu();
