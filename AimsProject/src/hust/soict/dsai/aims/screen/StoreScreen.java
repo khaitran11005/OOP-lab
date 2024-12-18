@@ -6,11 +6,13 @@ import java.util.*;
 import javax.swing.*;
 
 import hust.soict.dsai.aims.Aims.Aims;
+import hust.soict.dsai.aims.cart.Cart.Cart;
 import hust.soict.dsai.aims.media.Media;
 import hust.soict.dsai.aims.store.Store.Store;
 
 
 public class StoreScreen extends JFrame {
+	private Cart cart;
 	private Store store;
 	
 	JPanel createNorth() {
@@ -98,8 +100,9 @@ public class StoreScreen extends JFrame {
 		return center;
 	}
 	
-	public StoreScreen(Store store) {
+	public StoreScreen(Store store, Cart cart) {
 		this.store = store;
+		this.cart = cart;
 		Container cp = getContentPane();
 		cp.setLayout(new BorderLayout());
 		
@@ -115,15 +118,15 @@ public class StoreScreen extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			String action = e.getActionCommand();
 			if (action.equals("Add Book")) {
-				Aims.addBook();
+				new AddBookToStoreScreen(store);
 			} else if (action.equals("Add CD")) {
-				Aims.addCd();
+				new AddCDToStoreScreen(store);
 			} else if (action.equals("Add DVD")) {
-				Aims.addDvd();
+				new AddDVDToStoreScreen(store);
 			} else if (action.equals("View store")) {
-				Aims.store.print();
+				new StoreScreen(store, cart);
 			} else if (action.equals("View cart")) {
-				Aims.cart.print();
+				new CartScreen(store, cart);
 			}
 		}
 	}
