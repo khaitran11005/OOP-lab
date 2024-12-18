@@ -9,6 +9,8 @@ public abstract class Media {
 	protected String category;
 	protected float cost;
 	
+	protected static int GLOBAL_ID_COUNT = 0;
+	
 	public static final Comparator<Media> COMPARE_BY_TITLE_COST = new MediaComparatorByTitleCost();
 	public static final Comparator<Media> COMPARE_BY_COST_TITLE = new MediaComparatorByCostTitle();
 	
@@ -18,10 +20,13 @@ public abstract class Media {
 	}
 	
 	public Media(int id, String title, String category, float cost) {
+		//please for the love of jesus christ do not ask about the id stuff
 		this.id = id;
 		this.title = title;
 		this.category = category;
 		this.cost = cost;
+		this.setId(GLOBAL_ID_COUNT);
+		GLOBAL_ID_COUNT += 1;
 	}
 
 	public int getId() {

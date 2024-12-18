@@ -29,10 +29,10 @@ public class Book extends Media {
 			}
 		}
 		if (inList) {
-			System.out.println("Author already in list.");
+			// System.out.println("Author already in list.");
 		} else {
 			this.authors.add(authorName);
-			System.out.println("Author " + authorName + " successfully added.");
+			// System.out.println("Author " + authorName + " successfully added.");
 		}
 	}
 	
@@ -42,11 +42,11 @@ public class Book extends Media {
 			if (this.authors.get(i) == authorName) {
 				inList = true;
 				this.authors.remove(i);
-				System.out.println("Author " + authorName + " successfully removed.");
+				// System.out.println("Author " + authorName + " successfully removed.");
 			}
 		}
 		if (inList == false) {
-			System.out.println("Author not in list.");
+			// System.out.println("Author not in list.");
 		} 
 	}
 	
