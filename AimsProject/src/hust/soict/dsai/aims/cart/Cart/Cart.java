@@ -2,13 +2,15 @@ package hust.soict.dsai.aims.cart.Cart;
 
 import java.util.*;
 import hust.soict.dsai.aims.media.Media;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class Cart {
 	
-	private ArrayList<Media> itemsList;
+	private ObservableList<Media> itemsList;
 	
 	public Cart() {
-		itemsList = new ArrayList<Media>();
+		this.itemsList = FXCollections.observableArrayList();
 	}
 	
 	public static final int MAX_NUMBERS_ORDERED = 20;
@@ -105,5 +107,9 @@ public class Cart {
 		for (Media m: itemsList) {
 			itemsList.remove(m);
 		}
+	}
+	
+	public ObservableList<Media> getItemsList() {
+		return itemsList;
 	}
 }
